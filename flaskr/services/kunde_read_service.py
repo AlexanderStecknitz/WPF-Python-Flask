@@ -18,6 +18,8 @@ class KundeReadService:
         for key, value in args.items():
             if key == "nachname":
                 return KundeRepository.find_by_nachname(self)
+        emptyList=[]
+        return emptyList
 
 
 
