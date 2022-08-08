@@ -13,7 +13,7 @@ def find(
     read_service: KundeReadService = Provide[Container.kunde_read_service]
 ):
     args = request.args
-    current_app.logger.info('find %s', args)
+    current_app.logger.info('find %s', args.to_dict())
     kunden = read_service.find(args)
     return jsonify(kunden)
 
