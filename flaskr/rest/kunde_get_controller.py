@@ -18,5 +18,5 @@ def find_all(
     """
     current_app.logger.info('find_all kunden')
     kunde = read_service.find_all()
-    current_app.logger.info('find all kunden: {}', kunde)
+    current_app.logger.info('find all kunden: %s', kunde)
     return jsonify(kunde)
