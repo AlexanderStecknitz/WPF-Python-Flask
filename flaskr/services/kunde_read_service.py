@@ -15,5 +15,9 @@ class KundeReadService:
              args: dict):
         if len(args) == 0:
             return KundeRepository.find_all(self)
+        for key, value in args.items():
+            if key == "nachname":
+                return KundeRepository.find_by_nachname(self)
+
 
 
