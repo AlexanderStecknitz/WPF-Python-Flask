@@ -1,6 +1,7 @@
 """Test"""
 
 from flask import current_app
+from repository.kunde_repository import KundeRepository
 
 
 class KundeReadService:
@@ -11,17 +12,10 @@ class KundeReadService:
     def __init__(self):
         pass
 
-    def get_all(self):
+    def find_all(self):
         """
         Test
         :return:
         """
-        return 'Test'
-
-    def test(self):
-        """
-        Test
-        :return:
-        """
-        current_app.logger.info('test')
-        return 'test'
+        current_app.logger.info("KundeReadService find_all")
+        return KundeRepository.find_all(self)

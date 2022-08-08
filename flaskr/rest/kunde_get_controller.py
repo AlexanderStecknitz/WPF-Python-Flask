@@ -1,7 +1,6 @@
 """Test"""
 
-from flask import Blueprint
-from flask import current_app
+from flask import Blueprint, jsonify, current_app
 from dependency_injector.wiring import inject, Provide
 from services.kunde_read_service import KundeReadService
 from container import Container
@@ -18,4 +17,6 @@ def find_all(
     Test
     """
     current_app.logger.info('find_all kunden')
-    return read_service.test()
+    kunde = read_service.find_all()
+    current_app.logger.info('find all kunden: {}', kunde)
+    return jsonify(kunde)
