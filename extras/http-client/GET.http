@@ -3,4 +3,10 @@ Accept: application/json
 
 ###
 
+GET {{baseUrl}}/api?nachname=Mock10
+Accept: application/json
 
+###
+
+GET {{baseUrl}}/api?vorname=Mock10
+Accept: application/json
