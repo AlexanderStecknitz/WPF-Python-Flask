@@ -1,0 +1,6 @@
+GET {{baseUrl}}/api
+Accept: application/json
+
+###
+
+
