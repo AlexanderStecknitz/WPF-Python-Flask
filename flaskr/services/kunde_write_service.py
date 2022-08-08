@@ -11,4 +11,8 @@ class KundeWriteService:
 
     def delete_by_id(self, kunde_id):
         current_app.logger.info('delete kunde with id: %d', kunde_id)
-        kunden.remove(kunde_id)
+        for i in kunden:
+            if i.id == kunde_id:
+                kunden.remove(i)
+        current_app.logger.info(kunden)
+
