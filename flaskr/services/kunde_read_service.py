@@ -12,7 +12,8 @@ class KundeReadService:
         pass
 
     def find(self,
-             args: dict):
+             args: dict,
+             ):
         """
         find customer in dependence of query params
         :param args: query params
