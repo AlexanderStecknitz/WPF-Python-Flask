@@ -20,5 +20,5 @@ def find(
 ):
     args = request.args
     current_app.logger.info('find %s', args.to_dict())
-    kunden = read_service.find(args)
+    kunden = read_service.find(args = args)
     return jsonify(kunden)
