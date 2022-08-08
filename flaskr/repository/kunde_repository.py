@@ -6,3 +6,6 @@ class KundeRepository:
         current_app.logger.info('find_all repository')
         kunde = kunden
         return kunde
+
+    def find_by_nachname(self):
+        pass
