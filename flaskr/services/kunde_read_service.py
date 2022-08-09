@@ -25,8 +25,7 @@ class KundeReadService:
         for key, value in args.items():
             if key == "nachname":
                 return self.find_by_nachname()
-        empty_list = []
-        return empty_list
+        return None
 
     def find_by_nachname(self):
         """
