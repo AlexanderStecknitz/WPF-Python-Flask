@@ -25,6 +25,7 @@ dictConfig({
 def create_app() -> Flask:
     container = Container()
     app = Flask(__name__)
+    app.env = 'development'
     app.container = container
     app.register_blueprint(kunde_get_controller)
     app.register_blueprint(kunde_write_controller)
