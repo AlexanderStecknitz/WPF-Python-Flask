@@ -1,6 +1,6 @@
 """CustomerReadService"""
 from flask import current_app
-from repository.kunde_repository import KundeRepository
+from repository.kunden import kunden
 
 
 class KundeReadService:
@@ -21,9 +21,24 @@ class KundeReadService:
         """
         current_app.logger.info('find')
         if len(args) == 0:
-            return KundeRepository.find_all(self)
+            return self.find_all()
         for key, value in args.items():
             if key == "nachname":
-                return KundeRepository.find_by_nachname(self)
+                return self.find_by_nachname()
         empty_list = []
         return empty_list
+
+    def find_by_nachname(self):
+        """
+        find customer by nachname
+        :return: mock customer
+        """
+
+    def find_all(self):
+        """
+        find all customer
+        :return: mock customer
+        """
+        current_app.logger.info('find_all repository')
+        kunde = kunden
+        return kunde
