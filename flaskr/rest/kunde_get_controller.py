@@ -6,6 +6,7 @@ from services.kunde_read_service import KundeReadService
 from container import Container
 from werkzeug.exceptions import HTTPException
 
+
 kunde_get_controller = Blueprint('KundeGetController', __name__)
 
 """
