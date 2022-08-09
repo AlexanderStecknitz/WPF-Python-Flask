@@ -10,10 +10,11 @@ kunde_write_controller = Blueprint("KundeWriteController", __name__)
 @kunde_write_controller.delete('/api/<int:kunde_id>')
 @inject
 def delete_by_id(kunde_id,
-                 write_service: KundeWriteService = Provide[Container.kunde_write_service]):
+                       write_service: KundeWriteService = Provide[Container.kunde_write_service]):
     current_app.logger.info('delete kunde with id: %s', kunde_id)
     write_service.delete_by_id(kunde_id=kunde_id)
     return jsonify(201)
+
 
 @kunde_write_controller.errorhandler(HTTPException)
 def handle_exception(e):
