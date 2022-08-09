@@ -1,6 +1,6 @@
 """CustomerGetController"""
 
-from flask import Blueprint, jsonify, current_app, request
+from flask import Blueprint, jsonify, current_app, request, abort
 from dependency_injector.wiring import inject, Provide
 from services.kunde_read_service import KundeReadService
 from container import Container
@@ -21,4 +21,6 @@ def find(
     args = request.args
     current_app.logger.info('find %s', args.to_dict())
     kunden = read_service.find(args = args)
+    if kunden is None:
+        abort(404)
     return jsonify(kunden)
