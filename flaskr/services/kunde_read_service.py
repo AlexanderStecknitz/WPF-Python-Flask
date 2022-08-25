@@ -24,14 +24,35 @@ class KundeReadService:
             return self.find_all()
         for key, value in args.items():
             if key == "nachname":
-                return self.find_by_nachname()
+                return self.find_by_nachname(value)
         return None
 
-    def find_by_nachname(self):
+    def find_by_nachname(self, nachname):
         """
         find customer by nachname
         :return: mock customer
         """
+
+        found_kunden = []
+
+        for kunde in kunden:
+            if kunde.nachname == nachname:
+                found_kunden.append(kunde)
+
+        if len(found_kunden) == 0:
+            found_kunden = None
+        return found_kunden
+
+    def find_by_id(self, id):
+        """
+        Test
+        :return:
+        """
+        current_app.logger.info('find_by_id')
+        for kunde in kunden:
+            if kunde.id == id:
+                return kunde
+        return None
 
     def find_all(self):
         """

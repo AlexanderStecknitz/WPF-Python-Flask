@@ -1,12 +1,18 @@
+GET {{baseUrl}}/api/5
+Accept: application/json
+
+###
+
 GET {{baseUrl}}/api
 Accept: application/json
 
 ###
 
-GET {{baseUrl}}/api?nachname=Mock10
+GET {{baseUrl}}/api?nachname=Mock7
 Accept: application/json
 
 ###
 
-GET {{baseUrl}}/api?vorname=Mock10
+GET {{baseUrl}}/api?vorname=Mock2
 Accept: application/json
+
