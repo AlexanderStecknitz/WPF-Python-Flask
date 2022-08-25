@@ -40,6 +40,18 @@ def create_kunde(
     return Response(status=201, mimetype='application/json')
 
 
+@kunde_write_controller.put('/api/<int:kunde_id>')
+@inject
+def update_kunde(
+        kunde_id,
+        write_service: KundeWriteService = Provide[Container.kunde_write_service]
+):
+    kunde = request.get_json()
+    current_app.logger.info(kunde)
+    write_service.update_kunde(kunde=kunde, id=kunde_id)
+    return Response(status=204, mimetype='application/json')
+
+
 @kunde_write_controller.errorhandler(HTTPException)
 def handle_exception(e):
     """

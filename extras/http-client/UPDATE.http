@@ -1,0 +1,4 @@
+PUT {{baseUrl}}/api/1
+Content-Type: application/json
+
+< data/kunde-put.json
