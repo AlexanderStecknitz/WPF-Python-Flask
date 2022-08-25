@@ -1,0 +1,6 @@
+POST {{baseUrl}}/api
+Content-Type: application/json
+
+< data/kunde-neu.json
+
+###
